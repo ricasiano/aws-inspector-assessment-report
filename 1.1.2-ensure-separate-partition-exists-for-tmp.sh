@@ -29,9 +29,6 @@ if ! df -T /tmp | awk '/^\/dev/ {print $1}' | grep -Eq '^/dev/loop[0-9]$'; then
         # temporarily mount to a separate dir as we will be synching the contents from the original tmp dir
         # allow read-write, no device access, disable switching user id, disable executables for this partition
         mount -o loop,rw,nodev,nosuid,noexec /dev/tmp.bin /root/tmp
-        # stop services
-        service supervisor stop
-        service redis-server stop
         # perform copy, trailing slash on source so it won't be contained on the /tmp directory
         rsync -av /tmp/ /root/tmp
         # remount/bind it to /tmp
@@ -41,9 +38,6 @@ if ! df -T /tmp | awk '/^\/dev/ {print $1}' | grep -Eq '^/dev/loop[0-9]$'; then
         chmod 1777 /tmp
         # update fstab, so it would persist on reboot
         echo "/dev/tmp.bin /tmp ext4 loop,rw,noexec,nosuid,nodev 0 0" >> /etc/fstab
-        # restart services
-        service supervisor start
-        service redis-server start
         # cleanup
         rmdir /root/tmp
         echo "done."
