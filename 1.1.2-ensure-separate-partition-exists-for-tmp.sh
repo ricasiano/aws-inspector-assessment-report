@@ -8,13 +8,7 @@ then
 else
         mkdir -p /var/local/tmp
         touch /etc/apt/apt.conf.d/51extracttemplates
-        echo 'APT
-{
-  ExtractTemplates
-  {
-        TempDir "/var/local/tmp";
-  };
-};' >> /etc/apt/apt.conf.d/50extracttemplates
+        printf "APT::ExtractTemplates::TempDir \"/var/local/tmp\";" >> /etc/apt/apt.conf.d/50extracttemplates
         echo "Successfully created custom apt tmp dir."
 fi
 
