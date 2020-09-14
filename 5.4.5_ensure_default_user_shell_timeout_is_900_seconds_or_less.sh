@@ -7,7 +7,7 @@ if [ `grep -c "TMOUT=" /etc/profile` -ne 0 ]; then
   echo "timeout policy already exists."
 else
   echo "Creating timeout policy entry..."
-  echo "TMOUT=300
+  echo "TMOUT=900
 readonly TMOUT
 export TMOUT" >> /etc/profile
   echo "done."
