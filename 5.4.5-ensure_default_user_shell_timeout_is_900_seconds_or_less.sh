@@ -1,6 +1,5 @@
 #!/bin/bash
-
-echo "5.4.5 Ensure default user shell timeout is 900 seconds or less"
+# 5.4.5 Ensure default user shell timeout is 900 seconds or less
 # https://www.cyberciti.biz/faq/linux-tmout-shell-autologout-variable/
 # we'll be using /etc/profile to propagate the time-out policy globally
 if [ `grep -c "TMOUT=" /etc/profile` -ne 0 ]; then
