@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # 1.1.2 Ensure separate partition exists for /tmp
 # points to a separate tmp dir as dpkg have some packages require exec on the said directory
 echo "pre-run Set dpkg tmp to dir with allowed exec"
