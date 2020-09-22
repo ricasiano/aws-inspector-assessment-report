@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "6.2.8 Ensure users' home directories permissions are 750 or more restrictive"
+# 6.2.8 Ensure users' home directories permissions are 750 or more restrictive
 # https://secscan.acron.pl/centos7/6/2/8
 #    loop through each entry in /etc/passwd
 #    set colon(:) as the field separator
