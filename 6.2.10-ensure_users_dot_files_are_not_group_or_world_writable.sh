@@ -1,4 +1,5 @@
 #!/bin/bash
+# 6.2.10 Ensure users dot files are not group or world writable
 for dir in `cat /etc/passwd | egrep -v '(root|sync|halt|shutdown)' | awk -F: '($7 != "/usr/sbin/nologin") { print $6 }'`; do
   for file in $dir/.[A-Za-z0-9]*; do
     if [ ! -h "$file" -a -f "$file" ]; then
