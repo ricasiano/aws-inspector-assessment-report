@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # 5.4.1.4 Ensure inactive password lock is 30 days or less
 if [ `useradd -D | grep INACTIVE | cut -d"=" -f2` -lt 30 ]; then
   echo "Default inactivity of password is lower than 30. Setting to 30"
