@@ -1,0 +1,2 @@
+#!/bin/sh
+[ `cat /etc/ssh/sshd_config | grep -c '^AllowUsers.*ubuntu$'` -eq 0 ] && printf "\nAllowUsers ubuntu\n" >> /etc/ssh/sshd_config
