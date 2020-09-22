@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # 5.3.1 Ensure password creation requirements are configured
 apt-get install libpam-pwquality
 grep -q '^password.*requisite.*pam_pwquality\.so.*retry=[0-9]' /etc/pam.d/common-password &&
