@@ -1,2 +1,3 @@
 #!/bin/sh
+# 5.2.14 Ensure ssh access is limited
 [ `cat /etc/ssh/sshd_config | grep -c '^AllowUsers.*ubuntu$'` -eq 0 ] && printf "\nAllowUsers ubuntu\n" >> /etc/ssh/sshd_config
