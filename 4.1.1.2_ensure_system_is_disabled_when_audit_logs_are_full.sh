@@ -19,3 +19,5 @@ if [ `grep -c "^admin_space_left_action" /etc/audit/auditd.conf` -eq 0 ]; then
 else
   sed -Ei "s/^(admin_space_left_action).*=.*/\1 = halt/g" /etc/audit/auditd.conf
 fi
+
+service auditd restart
